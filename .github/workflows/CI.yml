@@ -73,7 +73,7 @@ jobs:
         run: |
           chown -R 1000:1000 `pwd`
           su `id -un 1000` -c 'whoami && java -version && 
-                              ./gradlew -Dtests.security.manager=false clean test -x spotlessJava'
+                              ./gradlew -Dtests.security.manager=false clean test'
 
 
   Build-ltr-windows:
@@ -97,4 +97,4 @@ jobs:
       - name: Build and Run Tests
         shell: bash
         run: |
-          ./gradlew.bat build -x spotlessJava
+          ./gradlew.bat build
