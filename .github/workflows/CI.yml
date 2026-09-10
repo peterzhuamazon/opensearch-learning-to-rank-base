@@ -22,6 +22,7 @@ jobs:
     if: github.repository == 'opensearch-project/opensearch-learning-to-rank-base'
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         java: [21]
     steps:
@@ -41,6 +42,7 @@ jobs:
   Build-ltr-linux:
     needs: [Get-CI-Image-Tag, spotless]
     strategy:
+      fail-fast: false
       matrix:
         java: [ 11, 17, 21 ]
 
@@ -78,6 +80,7 @@ jobs:
 
   Build-ltr-windows:
     strategy:
+      fail-fast: false
       matrix:
         java: [ 11, 17, 21 ]
     name: Build and Test LTR Plugin on Windows
